@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'add_transaction_page.dart';
+import 'edit_transaction_page.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(const ExpenseManagerApp());
@@ -110,14 +113,19 @@ class WelcomePage extends StatelessWidget {
                     color: Colors.grey,
                   ),
                 ),
-                  const SizedBox(height: 300),
+                  const SizedBox(height: 320),
 
                   SizedBox(
                     width: 220,
                     height: 50,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Sau này xử lý chuyển màn hình ở đây
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.blue,
@@ -135,11 +143,11 @@ class WelcomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
-      ),
       ),
     );
   }
