@@ -10,24 +10,24 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF8F9FD),
 
-      // =========================
-      // NỘI DUNG CHÍNH
-      // =========================
+      // ==================================================
+      // NỘI DUNG TRANG CHỦ
+      // ==================================================
       body: SafeArea(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(16, 10, 16, 20),
+          padding: const EdgeInsets.fromLTRB(16, 10, 16, 90),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // =========================
+              // ==================================================
               // THANH TRÊN
-              // =========================
+              // ==================================================
               Row(
                 children: [
                   const Icon(
                     Icons.menu,
-                    size: 28,
-                    color: Colors.black,
+                    size: 27,
+                    color: Color(0xFF202632),
                   ),
 
                   const SizedBox(width: 18),
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: Color(0xFF1D2433),
+                        color: Color(0xFF202632),
                       ),
                     ),
                   ),
@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                       const Icon(
                         Icons.notifications_none,
                         size: 29,
-                        color: Colors.black,
+                        color: Color(0xFF202632),
                       ),
 
                       Positioned(
@@ -79,97 +79,134 @@ class HomePage extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 18),
 
-              // =========================
-              // SỐ DƯ HIỆN TẠI
-              // =========================
+              // ==================================================
+              // THẺ SỐ DƯ
+              // ==================================================
               Container(
                 width: double.infinity,
                 height: 150,
-                padding: const EdgeInsets.all(18),
+                padding: const EdgeInsets.fromLTRB(18, 16, 18, 12),
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18),
                   gradient: const LinearGradient(
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      Color(0xFF4B84F8),
-                      Color(0xFF1565E8),
+                      Color(0xFF4D88F8),
+                      Color(0xFF1764E8),
                     ],
                   ),
-                  borderRadius: BorderRadius.circular(18),
                 ),
                 child: Stack(
-                  clipBehavior: Clip.none,
                   children: [
+                    // Nội dung chữ
                     Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const SizedBox(height: 4),
-
-                        const Text(
-                          'SỐ DƯ HIỆN TẠI  👁',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
+                        const Center(
+                          child: Text(
+                            'SỐ DƯ HIỆN TẠI  👁',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
 
-                        const SizedBox(height: 10),
+                        const SizedBox(height: 8),
 
-                        const Text(
-                          '5.000.000 đ',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 31,
-                            fontWeight: FontWeight.bold,
+                        const Center(
+                          child: Text(
+                            '5.000.000 đ',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 31,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
                     ),
 
-                    // Ví nhỏ ở góc
+                    // Ví ở góc phải
                     Positioned(
-                      right: 8,
+                      right: 3,
                       bottom: 16,
-                      child: Container(
-                        width: 60,
-                        height: 48,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF2783E8),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
+                      child: SizedBox(
+                        width: 70,
+                        height: 62,
                         child: Stack(
                           clipBehavior: Clip.none,
                           children: [
+                            // Tờ tiền
                             Positioned(
-                              top: -14,
-                              left: 16,
+                              top: 0,
+                              left: 13,
                               child: Container(
-                                width: 33,
+                                width: 35,
                                 height: 22,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF72C884),
+                                  color: const Color(0xFF71C983),
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                               ),
                             ),
 
+                            // Ví
                             Positioned(
-                              right: -2,
-                              top: 13,
+                              left: 0,
+                              bottom: 0,
                               child: Container(
-                                width: 25,
-                                height: 23,
+                                width: 62,
+                                height: 47,
                                 decoration: BoxDecoration(
-                                  color: const Color(0xFF1459B6),
-                                  borderRadius: BorderRadius.circular(6),
+                                  color: const Color(0xFF2B83E8),
+                                  borderRadius: BorderRadius.circular(10),
                                 ),
-                                child: const Center(
-                                  child: CircleAvatar(
-                                    radius: 4,
-                                    backgroundColor: Colors.white,
-                                  ),
+                                child: Stack(
+                                  children: [
+                                    Positioned(
+                                      right: 0,
+                                      top: 14,
+                                      child: Container(
+                                        width: 27,
+                                        height: 25,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFF155AB7),
+                                          borderRadius:
+                                          BorderRadius.circular(7),
+                                        ),
+                                        child: const Center(
+                                          child: CircleAvatar(
+                                            radius: 4,
+                                            backgroundColor: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+
+                            // Đồng xu
+                            Positioned(
+                              left: 2,
+                              bottom: -3,
+                              child: Container(
+                                width: 19,
+                                height: 19,
+                                decoration: const BoxDecoration(
+                                  color: Color(0xFFFFC93D),
+                                  shape: BoxShape.circle,
+                                ),
+                                child: const Icon(
+                                  Icons.attach_money,
+                                  color: Colors.orange,
+                                  size: 12,
                                 ),
                               ),
                             ),
@@ -178,16 +215,17 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
 
+                    // Chỉ báo
                     const Positioned(
+                      bottom: 0,
                       left: 0,
                       right: 0,
-                      bottom: 0,
                       child: Center(
                         child: Text(
                           '━ • • •',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 15,
+                            fontSize: 14,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -199,118 +237,32 @@ class HomePage extends StatelessWidget {
 
               const SizedBox(height: 12),
 
-              // =========================
-              // TỔNG THU / CHI
-              // =========================
+              // ==================================================
+              // THU NHẬP / CHI TIÊU
+              // ==================================================
               Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      height: 78,
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFEAF8EC),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        children: [
-                          const CircleAvatar(
-                            radius: 19,
-                            backgroundColor: Color(0xFF68C879),
-                            child: Icon(
-                              Icons.arrow_downward,
-                              color: Colors.white,
-                              size: 22,
-                            ),
-                          ),
-
-                          const SizedBox(width: 8),
-
-                          const Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'TỔNG THU NHẬP',
-                                  style: TextStyle(
-                                    fontSize: 9,
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-
-                                SizedBox(height: 4),
-
-                                Text(
-                                  '8.000.000 đ',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.green,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: summaryCard(
+                      title: 'TỔNG THU NHẬP',
+                      money: '8.000.000 đ',
+                      backgroundColor: const Color(0xFFEAF8EC),
+                      iconColor: const Color(0xFF69C879),
+                      icon: Icons.arrow_downward,
+                      moneyColor: Colors.green,
                     ),
                   ),
 
                   const SizedBox(width: 10),
 
                   Expanded(
-                    child: Container(
-                      height: 78,
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      decoration: BoxDecoration(
-                        color: const Color(0xFFFFEBED),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Row(
-                        children: [
-                          const CircleAvatar(
-                            radius: 19,
-                            backgroundColor: Color(0xFFFF6E73),
-                            child: Icon(
-                              Icons.arrow_upward,
-                              color: Colors.white,
-                              size: 22,
-                            ),
-                          ),
-
-                          const SizedBox(width: 8),
-
-                          const Expanded(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'TỔNG CHI TIÊU',
-                                  style: TextStyle(
-                                    fontSize: 9,
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-
-                                SizedBox(height: 4),
-
-                                Text(
-                                  '3.000.000 đ',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                    child: summaryCard(
+                      title: 'TỔNG CHI TIÊU',
+                      money: '3.000.000 đ',
+                      backgroundColor: const Color(0xFFFFEBED),
+                      iconColor: const Color(0xFFFF7075),
+                      icon: Icons.arrow_upward,
+                      moneyColor: Colors.red,
                     ),
                   ),
                 ],
@@ -318,9 +270,9 @@ class HomePage extends StatelessWidget {
 
               const SizedBox(height: 22),
 
-              // =========================
+              // ==================================================
               // GIAO DỊCH GẦN ĐÂY
-              // =========================
+              // ==================================================
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: const [
@@ -329,16 +281,16 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
-                      color: Color(0xFF1D2433),
+                      color: Color(0xFF202632),
                     ),
                   ),
 
                   Text(
                     'Xem tất cả',
                     style: TextStyle(
-                      color: Colors.blue,
                       fontSize: 12,
                       fontWeight: FontWeight.bold,
+                      color: Color(0xFF2878E8),
                     ),
                   ),
                 ],
@@ -346,9 +298,9 @@ class HomePage extends StatelessWidget {
 
               const SizedBox(height: 10),
 
-              // =========================
-              // DANH SÁCH
-              // =========================
+              // ==================================================
+              // DANH SÁCH GIAO DỊCH
+              // ==================================================
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -414,16 +366,14 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
               ),
-
-              const SizedBox(height: 100),
             ],
           ),
         ),
       ),
 
-      // =========================
+      // ==================================================
       // NÚT +
-      // =========================
+      // ==================================================
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
@@ -434,6 +384,7 @@ class HomePage extends StatelessWidget {
           );
         },
         backgroundColor: const Color(0xFF2878E8),
+        elevation: 5,
         child: const Icon(
           Icons.add,
           color: Colors.white,
@@ -441,9 +392,9 @@ class HomePage extends StatelessWidget {
         ),
       ),
 
-      // =========================
-      // MENU DƯỚI
-      // =========================
+      // ==================================================
+      // THANH MENU DƯỚI
+      // ==================================================
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 0,
         type: BottomNavigationBarType.fixed,
@@ -468,9 +419,73 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  // =========================
-  // WIDGET GIAO DỊCH
-  // =========================
+  // ==================================================
+  // Ô THU NHẬP / CHI TIÊU
+  // ==================================================
+  Widget summaryCard({
+    required String title,
+    required String money,
+    required Color backgroundColor,
+    required Color iconColor,
+    required IconData icon,
+    required Color moneyColor,
+  }) {
+    return Container(
+      height: 76,
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 19,
+            backgroundColor: iconColor,
+            child: Icon(
+              icon,
+              color: Colors.white,
+              size: 22,
+            ),
+          ),
+
+          const SizedBox(width: 8),
+
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 9,
+                    color: Colors.grey,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+
+                const SizedBox(height: 4),
+
+                Text(
+                  money,
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: moneyColor,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // ==================================================
+  // ITEM GIAO DỊCH
+  // ==================================================
   Widget transactionItem(
       BuildContext context, {
         required IconData icon,
@@ -517,7 +532,7 @@ class HomePage extends StatelessWidget {
                   style: const TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
-                    color: Color(0xFF1D2433),
+                    color: Color(0xFF202632),
                   ),
                 ),
 
@@ -573,10 +588,10 @@ class HomePage extends StatelessWidget {
             },
             icon: const Icon(
               Icons.edit,
-              color: Colors.blue,
-              size: 18,
+              size: 17,
+              color: Color(0xFF1687F2),
             ),
-            tooltip: 'Sửa giao dịch',
+            tooltip: 'Sửa',
           ),
         ],
       ),
