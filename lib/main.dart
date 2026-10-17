@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'add_transaction_page.dart';
 import 'edit_transaction_page.dart';
 import 'home_page.dart';
+import 'app_route_observer.dart';
 
 void main() {
   runApp(const ExpenseManagerApp());
@@ -14,6 +15,7 @@ class ExpenseManagerApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Expense Manager',
+      navigatorObservers: [appRouteObserver],
       home: const WelcomePage(),
     );
   }
